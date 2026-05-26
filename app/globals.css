@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose: #e11d48;
+  --rose-light: #fda4af;
+  --gold: #d4a847;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #e11d48, #d4a847);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-rose {
+  background: linear-gradient(135deg, #e11d48, #be123c);
+  transition: all 0.2s;
+}
+.btn-rose:hover {
+  background: linear-gradient(135deg, #be123c, #9f1239);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(225, 29, 72, 0.35);
+}
