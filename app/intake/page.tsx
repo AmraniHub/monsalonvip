@@ -142,43 +142,15 @@ export default function IntakePage() {
     setLoading(true)
     setError('')
     try {
-      const scriptUrl = process.env.NEXT_PUBLIC_SCRIPT_URL || ''
-      const body = {
-        action: 'addIntake',
-        ...form,
-        services: JSON.stringify(form.services.filter(s => s.name)),
-        submittedAt: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
-      }
-      if (scriptUrl) {
-        await fetch(scriptUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
-        })
-      }
-      // Also send Telegram notification
-      const tgToken = process.env.TELEGRAM_BOT_TOKEN
-      const tgChat  = process.env.TELEGRAM_CHAT_ID
-      if (tgToken && tgChat) {
-        const msg = [
-          `📋 <b>INTAKE REÇU — ${form.salonName}</b>`,
-          ``,
-          `👤 <b>${form.ownerName}</b> · ${form.city}`,
-          `📞 ${form.phone}`,
-          `🎨 Palette: ${form.palette}`,
-          `💼 Secteur: ${form.sector}`,
-          `📅 Booking: ${form.booking}`,
-          `📸 Photos: ${form.hasPhotos}`,
-          `🖼 Logo: ${form.hasLogo}`,
-          ``,
-          `💬 <a href="https://wa.me/33${form.whatsapp.replace(/\D/g,'').replace(/^0/,'')}">WhatsApp →</a>`,
-        ].join('\n')
-        await fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: tgChat, text: msg, parse_mode: 'HTML' }),
-        })
-      }
+      await fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          services: JSON.stringify(form.services.filter(s => s.name)),
+          submittedAt: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+        }),
+      })
     } catch (_) {}
     setLoading(false)
     setSubmitted(true)

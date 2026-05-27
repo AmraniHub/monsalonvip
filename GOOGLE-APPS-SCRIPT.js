@@ -18,6 +18,7 @@ var SPREADSHEET_ID = 'PASTE_YOUR_SPREADSHEET_ID_HERE'
 
 var LEAD_HEADERS    = ['ID','Date','Source','Nom','Téléphone','Business','Ville','Secteur','Statut','Notes','WhatsApp']
 var PROJECT_HEADERS = ['ID','Date','Client','Business','Type','Statut','Prix (€)','Début','Livraison','URL','Notes']
+var INTAKE_HEADERS  = ['ID','Date','Salon','Propriétaire','Ville','Téléphone','WhatsApp','Email','Secteur','Palette','Style','Booking','LienBooking','Photos','Logo','Services','Horaires','Présentation','Note','Instagram','GoogleMaps']
 
 var LEAD_STATUSES    = ['Nouveau','Contacté','Devis envoyé','Client','Perdu']
 var PROJECT_STATUSES = ['Brief','En cours','Révision','Livré','Maintenance','Archivé']
@@ -31,6 +32,7 @@ function getSheet(name) {
     sh = ss.insertSheet(name)
     if (name === 'Leads')    sh.appendRow(LEAD_HEADERS)
     if (name === 'Projects') sh.appendRow(PROJECT_HEADERS)
+    if (name === 'Intakes')  sh.appendRow(INTAKE_HEADERS)
     sh.getRange(1, 1, 1, sh.getLastColumn()).setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffffff')
     sh.setFrozenRows(1)
   }
@@ -198,6 +200,36 @@ function doPost(e) {
         }
       }
       return cors(JSON.stringify({ ok: false, error: 'Project not found' }))
+    }
+
+    // ── ADD INTAKE (MonSalonVip client onboarding) ────────────────────────────
+    if (action === 'addIntake') {
+      var shi = getSheet('Intakes')
+      var waI = (body.whatsapp || body.phone || '').replace(/\D/g,'').replace(/^0/,'')
+      shi.appendRow([
+        makeId('INT'),
+        now(),
+        body.salonName || '—',
+        body.ownerName || '—',
+        body.city || '—',
+        body.phone || '—',
+        waI ? 'https://wa.me/33' + waI : '—',
+        body.email || '—',
+        body.sector || '—',
+        body.palette || '—',
+        body.style || '—',
+        body.booking || '—',
+        body.bookingLink || '—',
+        body.hasPhotos || '—',
+        body.hasLogo || '—',
+        body.services || '—',
+        body.openingHours || '—',
+        body.aboutText || '—',
+        body.extraNote || '—',
+        body.instagram || '—',
+        body.googleMaps || '—',
+      ])
+      return cors(JSON.stringify({ ok: true }))
     }
 
     return cors(JSON.stringify({ ok: false, error: 'Unknown action: ' + action }))
