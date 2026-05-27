@@ -39,6 +39,7 @@ export async function POST(req: Request) {
 
     // ── Google Sheets (CRM) ───────────────────────────────────────────────────
     if (scriptUrl) {
+      // 1. Save full intake details
       await fetch(scriptUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,6 +66,30 @@ export async function POST(req: Request) {
           instagram: body.instagram || '—',
           googleMaps: body.googleMaps || '—',
           submittedAt: body.submittedAt || new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+        }),
+      })
+
+      // 2. Auto-create a Project in CRM
+      await fetch(scriptUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action:    'addProject',
+          client:    body.ownerName || '—',
+          business:  body.salonName || '—',
+          type:      'Site vitrine',
+          status:    'Brief',
+          price:     '490',
+          startDate: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+          dueDate:   '—',
+          url:       '—',
+          notes:     [
+            body.sector   ? `Secteur: ${body.sector}` : null,
+            body.palette  ? `Palette: ${body.palette}` : null,
+            body.style    ? `Style: ${body.style}` : null,
+            body.booking  ? `Booking: ${body.booking}` : null,
+            body.extraNote ? `Note: ${body.extraNote}` : null,
+          ].filter(Boolean).join(' | ') || '—',
         }),
       })
     }
