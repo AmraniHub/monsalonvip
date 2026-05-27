@@ -19,6 +19,7 @@ var SPREADSHEET_ID = 'PASTE_YOUR_SPREADSHEET_ID_HERE'
 var LEAD_HEADERS    = ['ID','Date','Source','Nom','Téléphone','Business','Ville','Secteur','Statut','Notes','WhatsApp']
 var PROJECT_HEADERS = ['ID','Date','Client','Business','Type','Statut','Prix (€)','Début','Livraison','URL','Notes']
 var INTAKE_HEADERS  = ['ID','Date','Salon','Propriétaire','Ville','Téléphone','WhatsApp','Email','Secteur','Palette','Style','Booking','LienBooking','Photos','Logo','Services','Horaires','Présentation','Note','Instagram','GoogleMaps']
+var CLIENT_INTAKE_HEADERS = ['ID','Date','Source','Prénom','Entreprise','Secteur','Ville','Téléphone','Email','SiteActuel','TypeProjet','Description','Budget','Délai','Palette','Style','Logo','Photos','Services','Présentation','Domaine','Instagram','Facebook','LinkedIn','GoogleMaps','Note']
 
 var LEAD_STATUSES    = ['Nouveau','Contacté','Devis envoyé','Client','Perdu']
 var PROJECT_STATUSES = ['Brief','En cours','Révision','Livré','Maintenance','Archivé']
@@ -32,7 +33,8 @@ function getSheet(name) {
     sh = ss.insertSheet(name)
     if (name === 'Leads')    sh.appendRow(LEAD_HEADERS)
     if (name === 'Projects') sh.appendRow(PROJECT_HEADERS)
-    if (name === 'Intakes')  sh.appendRow(INTAKE_HEADERS)
+    if (name === 'Intakes')       sh.appendRow(INTAKE_HEADERS)
+    if (name === 'ClientIntakes') sh.appendRow(CLIENT_INTAKE_HEADERS)
     sh.getRange(1, 1, 1, sh.getLastColumn()).setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffffff')
     sh.setFrozenRows(1)
   }
@@ -228,6 +230,40 @@ function doPost(e) {
         body.extraNote || '—',
         body.instagram || '—',
         body.googleMaps || '—',
+      ])
+      return cors(JSON.stringify({ ok: true }))
+    }
+
+    // ── ADD CLIENT INTAKE (Lightsofter web project brief) ─────────────────────
+    if (action === 'addClientIntake') {
+      var shci = getSheet('ClientIntakes')
+      shci.appendRow([
+        makeId('CI'),
+        now(),
+        body.source || 'Lightsofter',
+        body.ownerName || '—',
+        body.company || '—',
+        body.sector || '—',
+        body.city || '—',
+        body.phone || '—',
+        body.email || '—',
+        body.existingUrl || '—',
+        body.projectType || '—',
+        body.projectDesc || '—',
+        body.budget || '—',
+        body.deadline || '—',
+        body.palette || '—',
+        body.style || '—',
+        body.hasLogo || '—',
+        body.hasPhotos || '—',
+        body.services || '—',
+        body.aboutText || '—',
+        body.domain || '—',
+        body.instagram || '—',
+        body.facebook || '—',
+        body.linkedin || '—',
+        body.googleMaps || '—',
+        body.extraNote || '—',
       ])
       return cors(JSON.stringify({ ok: true }))
     }
