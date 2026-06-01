@@ -110,7 +110,7 @@ export default function LandingPage() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-rose-50 border border-rose-200 text-rose-600 rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          Spécialiste sites web pour salons de beauté en France
+          Spécialiste sites web pour salons — France, Belgique, Suisse & Monaco
         </div>
 
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4 max-w-2xl mx-auto">
