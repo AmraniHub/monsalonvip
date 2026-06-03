@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     siteName: 'MonSalonVip',
   },
   robots: { index: true, follow: true },
+  other: {
+    'geo.region':    'FR',
+    'geo.placename': 'France',
+    'geo.position':  '46.2276;2.2137',
+    'ICBM':          '46.2276, 2.2137',
+  },
   icons: { icon: '/favicon.ico' },
 }
 
