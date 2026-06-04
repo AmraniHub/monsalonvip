@@ -365,6 +365,73 @@ export default function LandingPage() {
         </button>
       </section>
 
+      {/* ── OFFRES / PRICING ────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-gray-950 border-t border-gray-800">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-rose-400 text-sm font-semibold uppercase tracking-wider mb-2">Nos formules</p>
+          <h2 className="text-center text-3xl font-black text-white mb-3">Choisissez votre offre</h2>
+          <p className="text-center text-gray-500 mb-12">Tout commence par votre site — le reste suit.</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: 'Site Web',
+                price: '490€',
+                sub: 'paiement unique',
+                badge: '',
+                color: 'border-gray-700',
+                features: ['Site vitrine 5 pages','Design personnalisé','RDV en ligne intégré','SEO local inclus','Livré en 24h','Hébergement 1 an inclus'],
+                cta: 'Démarrer →',
+                href: '/intake',
+              },
+              {
+                name: 'Site + Maintenance',
+                price: '490€',
+                sub: '+ 49€/mois',
+                badge: '⭐ Recommandé',
+                color: 'border-rose-600',
+                features: ['Tout du plan Site Web','Mises à jour illimitées','Hébergement inclus à vie','Rapport SEO mensuel','Support prioritaire WhatsApp','Backup automatique'],
+                cta: 'Choisir cette formule →',
+                href: '/intake',
+              },
+              {
+                name: 'Site + Pub Meta',
+                price: '490€',
+                sub: '+ 99€/mois + budget pub',
+                badge: '🚀 Maximum clients',
+                color: 'border-violet-600',
+                features: ['Tout du plan Maintenance','Campagne Meta Ads gérée','Ciblage local précis','Rapport leads mensuel','Pixel Meta installé','Optimisation continue'],
+                cta: 'Booster mon salon →',
+                href: '/intake',
+              },
+            ].map(plan => (
+              <div key={plan.name} className={`bg-gray-900 border-2 ${plan.color} rounded-2xl p-6 flex flex-col`}>
+                {plan.badge && (
+                  <div className="mb-3">
+                    <span className="bg-rose-600/20 text-rose-400 text-xs font-bold px-3 py-1 rounded-full border border-rose-600/30">{plan.badge}</span>
+                  </div>
+                )}
+                <h3 className="text-white font-black text-lg mb-1">{plan.name}</h3>
+                <div className="mb-4">
+                  <span className="text-3xl font-black text-white">{plan.price}</span>
+                  <span className="text-gray-500 text-sm ml-1">{plan.sub}</span>
+                </div>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {plan.features.map(f => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
+                      <span className="text-rose-500 shrink-0">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={plan.href}
+                  className="w-full text-center bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold py-3 rounded-xl text-sm transition">
+                  {plan.cta}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── WHATSAPP FLOAT ──────────────────────────────────────── */}
       <a
         href="https://wa.me/212627716149?text=Bonjour%2C%20je%20voudrais%20un%20site%20pour%20mon%20salon%20%F0%9F%92%85"

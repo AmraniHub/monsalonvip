@@ -1,0 +1,35 @@
+{
+  "salonName": "Institut Nadia Beauty",
+  "tagline": "Soin du visage & corps — Lyon",
+  "ownerName": "Nadia Benali",
+  "city": "Lyon 7e",
+  "address": "45 avenue Jean-Jaurès, 69007 Lyon",
+  "phone": "06 98 76 54 32",
+  "whatsapp": "0698765432",
+  "email": "nadia@nadiabeuty.fr",
+  "instagram": "@nadiabeauty_lyon",
+  "googleMaps": "https://maps.google.com/?q=Institut+Nadia+Beauty+Lyon",
+  "googleRating": "5.0",
+  "googleReviewCount": "89",
+  "bookingLink": "https://calendly.com/nadiabeauty",
+  "palette": "nude",
+  "style": "naturel",
+  "sector": "Esthétique",
+  "aboutText": "Institut Nadia Beauty est un espace de bien-être dédié au soin du visage et du corps. Dans un cadre apaisant, Nadia vous accompagne avec des soins naturels et des techniques professionnelles pour sublimer votre beauté.",
+  "services": [
+    { "name": "Soin Visage", "price": "à partir de 55€", "emoji": "🌿", "desc": "Nettoyage, hydratation, anti-âge" },
+    { "name": "Épilation", "price": "à partir de 15€", "emoji": "✨", "desc": "Cire, fils, sourcils" },
+    { "name": "Massage Corps", "price": "à partir de 65€", "emoji": "💆", "desc": "Relaxant, drainant, sportif" },
+    { "name": "Nail Art", "price": "à partir de 35€", "emoji": "💅", "desc": "Pose gel, semi-permanent, nail art" }
+  ],
+  "reviews": [
+    { "name": "Fatima K.", "text": "Nadia est une vraie professionnelle. Mon visage n'a jamais été aussi bien !", "rating": 5, "date": "Il y a 2 jours" },
+    { "name": "Julie R.", "text": "Cadre magnifique, soins de qualité. Je recommande à toutes mes amies.", "rating": 5, "date": "Il y a 5 jours" },
+    { "name": "Amina B.", "text": "Le massage corps est incroyable. Je repars toujours complètement détendue.", "rating": 5, "date": "Il y a 3 semaines" }
+  ],
+  "openingHours": "Lundi–Vendredi 9h–20h / Samedi 9h–18h / Dimanche fermé",
+  "domain": "nadiabeauty.fr",
+  "telegramChatId": "XXXXXXXXX",
+  "metaPixelId": "",
+  "deliveryDate": "2026-06-05"
+}

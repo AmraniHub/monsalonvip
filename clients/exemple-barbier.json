@@ -1,0 +1,35 @@
+{
+  "salonName": "Le Barbier du Marais",
+  "tagline": "Coupe & Barbe — Style Parisien",
+  "ownerName": "Karim Mansouri",
+  "city": "Paris 3e",
+  "address": "8 rue des Archives, 75003 Paris",
+  "phone": "07 56 78 90 12",
+  "whatsapp": "0756789012",
+  "email": "karim@barbierdumaris.fr",
+  "instagram": "@barbierdumaris",
+  "googleMaps": "https://maps.google.com/?q=Le+Barbier+du+Marais+Paris",
+  "googleRating": "4.8",
+  "googleReviewCount": "214",
+  "bookingLink": "https://planity.com/le-barbier-du-marais",
+  "palette": "gold",
+  "style": "luxe",
+  "sector": "Barbier",
+  "aboutText": "Le Barbier du Marais est un barbershop premium au cœur de Paris. Karim et son équipe vous proposent des coupes et soins de barbe de haute précision dans une ambiance unique, alliant tradition et modernité.",
+  "services": [
+    { "name": "Coupe Homme", "price": "25€", "emoji": "✂️", "desc": "Coupe + finition + styling" },
+    { "name": "Barbe & Rasage", "price": "20€", "emoji": "🪒", "desc": "Taille, dessin, rasage à la serviette chaude" },
+    { "name": "Coupe + Barbe", "price": "40€", "emoji": "👑", "desc": "Le combo complet — notre best-seller" },
+    { "name": "Soin Capillaire", "price": "15€", "emoji": "🌟", "desc": "Masque, huile, finition premium" }
+  ],
+  "reviews": [
+    { "name": "Thomas V.", "text": "Meilleur barbier de Paris, sans hésitation. Karim est un artiste.", "rating": 5, "date": "Il y a 1 jour" },
+    { "name": "Romain D.", "text": "Service impeccable, ambiance top. Je viens chaque mois.", "rating": 5, "date": "Il y a 1 semaine" },
+    { "name": "Kevin A.", "text": "Mon barbier de confiance depuis 2 ans. Qualité constante.", "rating": 5, "date": "Il y a 2 semaines" }
+  ],
+  "openingHours": "Mardi–Samedi 10h–20h / Dimanche 10h–16h / Lundi fermé",
+  "domain": "barbierdumaris.fr",
+  "telegramChatId": "XXXXXXXXX",
+  "metaPixelId": "",
+  "deliveryDate": "2026-06-05"
+}

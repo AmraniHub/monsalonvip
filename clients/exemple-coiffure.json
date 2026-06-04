@@ -1,0 +1,35 @@
+{
+  "salonName": "Salon Éléonore",
+  "tagline": "Coiffure & Bien-être au cœur de Paris",
+  "ownerName": "Éléonore Dupont",
+  "city": "Paris 16e",
+  "address": "12 rue de la Pompe, 75016 Paris",
+  "phone": "06 12 34 56 78",
+  "whatsapp": "0612345678",
+  "email": "contact@saloneleonore.fr",
+  "instagram": "@saloneleonore",
+  "googleMaps": "https://maps.google.com/?q=Salon+Eleonore+Paris",
+  "googleRating": "4.9",
+  "googleReviewCount": "127",
+  "bookingLink": "https://planity.com/salon-eleonore",
+  "palette": "rose",
+  "style": "luxe",
+  "sector": "Coiffure",
+  "aboutText": "Salon Éléonore est un salon de coiffure haut de gamme situé dans le 16e arrondissement de Paris. Depuis 2015, notre équipe passionnée prend soin de vos cheveux dans un cadre chaleureux et élégant.",
+  "services": [
+    { "name": "Coupe & Brushing", "price": "à partir de 45€", "emoji": "✂️", "desc": "Coupe personnalisée + brushing professionnel" },
+    { "name": "Coloration", "price": "à partir de 65€", "emoji": "🎨", "desc": "Couleur, mèches, balayage babylights" },
+    { "name": "Soin Kératine", "price": "à partir de 80€", "emoji": "💆‍♀️", "desc": "Lissage brésilien, soin restructurant" },
+    { "name": "Chignon & Coiffure", "price": "à partir de 55€", "emoji": "👑", "desc": "Mariée, soirée, événement spécial" }
+  ],
+  "reviews": [
+    { "name": "Camille D.", "text": "Résultat parfait, exactement ce que je voulais. Je reviens chaque mois !", "rating": 5, "date": "Il y a 3 jours" },
+    { "name": "Sophie M.", "text": "Accueil chaleureux, équipe professionnelle. Mon meilleur salon parisien.", "rating": 5, "date": "Il y a 1 semaine" },
+    { "name": "Laura P.", "text": "La coloration est superbe, elle tient vraiment longtemps. Merci Éléonore !", "rating": 5, "date": "Il y a 2 semaines" }
+  ],
+  "openingHours": "Mardi–Samedi 9h–19h / Dimanche 10h–17h / Lundi fermé",
+  "domain": "saloneleonore.fr",
+  "telegramChatId": "XXXXXXXXX",
+  "metaPixelId": "",
+  "deliveryDate": "2026-06-05"
+}
